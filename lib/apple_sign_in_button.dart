@@ -41,11 +41,11 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
   @override
   Widget build(BuildContext context) {
     final bgColor =
-        widget.style == ButtonStyle.black ? Colors.black : Colors.white;
+    widget.style == ButtonStyle.black ? Colors.black : Colors.white;
     final textColor =
-        widget.style == ButtonStyle.black ? Colors.white : Colors.black;
+    widget.style == ButtonStyle.black ? Colors.white : Colors.black;
     final borderColor =
-        widget.style == ButtonStyle.white ? Colors.white : Colors.black;
+    widget.style == ButtonStyle.white ? Colors.white : Colors.black;
 
     return GestureDetector(
       onTapDown: (_) => setState(() => _isTapDown = true),
@@ -67,38 +67,41 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
           borderRadius: BorderRadius.all(
             Radius.circular(widget.cornerRadius),
           ),
-          border: Border.all(width: .7, color: borderColor),
+          border: Border.all(width: .4, color: borderColor),
         ),
         child: Center(
             child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 1, left: 2, right: 6),
-              child: SizedBox(
-                height: 14,
-                child: AspectRatio(
-                  aspectRatio: 25 / 31,
-                  child: CustomPaint(
-                    painter: _AppleLogoPainter(color: textColor),
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right:50.0),
+                  child: SizedBox(
+                    height: 20.4,
+                    child: AspectRatio(
+                      aspectRatio: 25 / 31,
+                      child: CustomPaint(
+                        painter: _AppleLogoPainter(color: textColor),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Text(
-              widget.type == ButtonType.continueButton
-                  ? 'Continue with Apple'
-                  : 'Sign in with Apple',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                letterSpacing: .3,
-                wordSpacing: -.5,
-                color: textColor,
-              ),
-            ),
-          ],
-        )),
+                Padding(
+                  padding: const EdgeInsets.only(right:60.0),
+                  child: Text(
+                    widget.type == ButtonType.continueButton
+                        ? 'Login with Apple'
+                        : 'Sign up with Apple',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: .3,
+                      wordSpacing: -.5,
+                      color: textColor,
+                    ),
+                  ),
+                ),
+              ],
+            )),
       ),
     );
   }
