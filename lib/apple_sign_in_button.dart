@@ -60,12 +60,13 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
           borderRadius: BorderRadius.all(
             Radius.circular(widget.cornerRadius),
           ),
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/white_outlined.png",
-            )
-          )
         ),
+        child: Container(
+          child: widget.type == ButtonType.continueButton
+              ? Image.asset("images/white_outlined.png")
+              : Image.asset("images/getapple.jpg")
+        ),
+        width: double.infinity,
       ),
     );
   }
