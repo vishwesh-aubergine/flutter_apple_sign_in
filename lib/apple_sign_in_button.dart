@@ -63,7 +63,7 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
         ),
         child: Container(
           child: widget.type == ButtonType.continueButton
-              ? Image.asset("images/white_outlined.png")
+              ? Image.asset("images/signin.png")
               : Image.asset("images/getapple.jpg")
         ),
         width: double.infinity,
